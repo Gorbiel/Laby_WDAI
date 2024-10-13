@@ -1,3 +1,7 @@
+html {
+    background-color: darkgrey;
+}
+
 .grid-container {
     display: grid;
     gap: 20px;
