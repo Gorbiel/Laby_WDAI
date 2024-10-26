@@ -106,81 +106,70 @@ a {
     position: fixed;
     top: 0;
     height: 60px;
-    line-height: 60px;
-    width: 100vw;
+    width: 100%;
     z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Navbar Content Wrapper */
 .nav-wrapper {
-    margin: auto;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 70%;
-} @media(max-width: 768px) {
+    max-width: 1200px;
+    margin: auto;
+}
+
+@media (max-width: 768px) {
     .nav-wrapper {
         width: 90%;
     }
-} @media(max-width: 638px) {
+}
+
+@media (max-width: 638px) {
     .nav-wrapper {
         width: 100%;
     }
 }
 
-
+/* Logo Styling */
 .logo {
-    float: left;
-    margin-left: 28px;
     font-size: 1.5em;
-    height: 30px;
     letter-spacing: 1px;
     text-transform: uppercase;
-} @media(max-width: 512px) {
-    .logo {
-        /*       margin-left: 5px; */
-    }
+    color: white;
 }
 
+/* Navbar Links */
 #navbar ul {
-    display: inline-block;
-    float: right;
+    display: flex;
     list-style: none;
-    /* margin-right: 14px; */
-    margin-top: -2px;
-    text-align: right;
-    transition: transform 0.5s ease-out;
-    -webkit-transition: transform 0.5s ease-out;
-} @media(max-width: 640px) {
-    #navbar ul {
-        display: none;
-    }
-} @media(orientation: landscape) {
-    #navbar ul {
-        display: inline-block;
-    }
+    gap: 20px; /* Space between links */
+    margin: 0;
+    padding: 0;
 }
 
 #navbar li {
-    display: inline-block;
+    list-style: none;
 }
 
 #navbar li a {
     color: inherit;
-    display: block;
-    font-size: 0.7em;
-    height: auto;
+    font-size: 0.8em;
     letter-spacing: 1px;
-    margin: 0 20px;
-    padding: 0 10px 0 10px;
-    position: relative;
-    text-decoration: none;
+    padding: 1em 10px;
     text-transform: uppercase;
+    position: relative;
     transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
 }
 
+/* Hover Effect */
 #navbar li a:hover {
     color: #FFFFFFFF;
-    transition: all 1s ease;
-    -webkit-transition: all 1s ease;
+    transition: color 1s ease;
 }
 
 /* Animated Bottom Line */
@@ -189,7 +178,7 @@ a {
     position: absolute;
     width: 0;
     height: 1px;
-    bottom: 18px;
+    bottom: 7px;
     background: #939393FF;
 }
 
@@ -200,8 +189,7 @@ a {
 
 #navbar li a:after {
     background: #FFFFFFFF;
-    right: -10%;
-    /* transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); */
+    right: 0;
 }
 
 #navbar li a:hover:before {
@@ -212,33 +200,26 @@ a {
 
 #navbar li a:hover:after {
     background: transparent;
-    width: 80%;
-    /* transition: 0s; */
+    width: 90%;
 }
 
-/* Disable hover and transitions when "active" class is applied */
+/* Disable hover and transitions when "active" class is applied, add permanent orange underline */
 #navbar li a.active {
-    transition: none !important; /* Disable all transitions */
-    -webkit-transition: none !important;
-    animation: none !important; /* Disable any animations */
-    color: #393939FF; /* Set active color */
-    background: #F79817; /* Set active background */
-}
-
-/* Specifically disable hover effects when the link is active */
-#navbar li a.active:hover {
-    color: #393939FF; /* Maintain active color on hover */
-    background: #ca7b12; /* Maintain active background on hover */
-    transition: none !important; /* Disable hover transition */
-    -webkit-transition: none !important;
+    transition: none !important;
+    animation: none !important;
+    color: #F79817;
 }
 
 #navbar li a.active:before,
 #navbar li a.active:after {
     content: '';
-    width: 0 !important; /* Ensure width is 0 */
-    transition: none !important; /* Disable any transition */
-    background: transparent !important; /* Make it invisible */
+    position: absolute;
+    width: 80%;
+    height: 1px;
+    bottom: 7px;
+    left: 10%;
+    background: #F79817;
+    transition: none !important;
 }
 
 
@@ -256,4 +237,10 @@ a {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+main {
+    padding-top: 70px;
+    padding-bottom: 50px;
+    padding-left: 10px;
 }
