@@ -1,1 +1,92 @@
 @import url(index.css);
+
+main {
+    padding: 85px 10px 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Basic gallery styling */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.gallery-image {
+    width: auto;
+    height: 400px;
+    border-radius: 8px; /* Optional rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+
+/* lightbox styling */
+
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black overlay */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+}
+
+.lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+/* Close button styling */
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #F79817; /* Optional hover color */
+}
+
+/* Arrow button styling */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    color: #ffffff;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+}
+
+.left-arrow {
+    left: 20px;
+}
+
+.right-arrow {
+    right: 20px;
+}
+
+.arrow:hover {
+    color: #F79817; /* Optional hover color */
+}
