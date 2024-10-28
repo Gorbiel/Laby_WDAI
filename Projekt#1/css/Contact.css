@@ -1,1 +1,104 @@
 @import url(index.css);
+
+main {
+    padding: 85px 10px 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main h2 {
+    color: #F79817;
+    margin-bottom: 15px;
+}
+
+main p {
+    color: #939393FF;
+    margin-bottom: 15px;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    max-width: 800px;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 15px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.contact-form button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+/* Social Icons Container */
+.social-icons {
+    display: flex;
+    gap: 10px; /* Space between icons */
+    justify-content: center; /* Center icons horizontally */
+    margin-top: 15px; /* Space above icons */
+}
+
+/* Font Awesome Icon Styling */
+.fa {
+    padding: 15px;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* Hover effect */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Facebook Icon */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter Icon */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-instagram {
+    background: linear-gradient(135deg, #854ae4, #ef4172, #febc2f);
+    color: white;
+}
