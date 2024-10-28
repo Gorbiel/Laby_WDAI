@@ -1,1 +1,20 @@
 @import url(index.css);
+@import url(Gallery.css);
+
+main {
+    padding: 85px 10px 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main section h2 {
+    color: #F79817;
+    margin-bottom: 15px;
+}
+
+main section p {
+    color: #939393FF;
+    margin-bottom: 15px;
+}
