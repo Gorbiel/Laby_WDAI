@@ -39,12 +39,15 @@ function showNextImage() {
 function openLightbox(src) {
     lightboxImage.src = src; // Set the image source
     lightbox.style.display = 'flex'; // Show the lightbox
+    currentIndex = images.indexOf(src); // Update the current index to the opened image
+    document.body.classList.add('no-scroll'); // Prevent background scroll
 }
 
 // Function to close lightbox
 function closeLightbox() {
     lightboxImage.src = "";
     lightbox.style.display = 'none';
+    document.body.classList.remove('no-scroll'); // Restore background scroll
 }
 
 // Loop through each image and add it to the gallery
@@ -68,8 +71,7 @@ lightbox.addEventListener('click', (e) => {
 
 closeButton.addEventListener('click', (e) => {
     e.stopPropagation(); // Prevent click from bubbling up to the lightbox
-    lightbox.style.display = 'none';
-    lightboxImage.src = '';
+    closeLightbox();
 });
 
 // Event listeners for arrow buttons
@@ -87,4 +89,71 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// Swipe detection for mobile devices
+document.addEventListener('DOMContentLoaded', () => {
+    const body = document.querySelector('body');
+    if (body.classList.contains('mobile')) {
+        let startX = 0;
+        let startY = 0;
+        let currentX = 0;
+        let currentY = 0;
+        let isDragging = false;
 
+        // Function to reset image position instantly
+        function resetImagePosition() {
+            lightboxImage.style.transition = 'transform 0.1s ease';
+            lightboxImage.style.transform = 'translate(0, 0)'; // Reset to original position
+        }
+
+        // Function to handle horizontal swipe for image navigation
+        function handleHorizontalSwipe() {
+            const diffX = startX - currentX;
+            if (Math.abs(diffX) > 300) { // Threshold for swipe completion
+                if (diffX > 0) {
+                    showNextImage(); // Swipe left
+                } else {
+                    showPreviousImage(); // Swipe right
+                }
+            }
+        }
+
+        // Function to handle vertical swipe to close lightbox
+        function handleVerticalSwipe() {
+            const diffY = startY - currentY;
+            if (Math.abs(diffY) > 300) { // Threshold for swipe completion
+                closeLightbox(); // Swipe up or down to close
+            }
+        }
+
+        // Start of touch event
+        lightbox.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+            currentX = startX;
+            currentY = startY;
+            isDragging = true;
+            lightboxImage.style.transition = 'none'; // Disable transition while dragging
+        });
+
+        // During touch event
+        lightbox.addEventListener('touchmove', (e) => {
+            if (isDragging) {
+                currentX = e.touches[0].clientX;
+                currentY = e.touches[0].clientY;
+                const diffX = currentX - startX;
+                const diffY = currentY - startY;
+                lightboxImage.style.transform = `translate(${diffX}px, ${diffY}px)`; // Move image with finger
+            }
+        });
+
+        // End of touch event
+        lightbox.addEventListener('touchend', () => {
+            if (isDragging) {
+                isDragging = false;
+                handleHorizontalSwipe(); // Check for horizontal swipe
+                handleVerticalSwipe(); // Check for vertical swipe
+                resetImagePosition(); // Instantly reset the position after swipe check
+            }
+        });
+    }
+});
