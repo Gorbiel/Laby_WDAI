@@ -1,11 +1,8 @@
 @import url(index.css);
 @import url(Gallery.css);
+@import url(index-mobile.css);
 
 main {
-    padding: 85px 10px 65px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
 }
 
