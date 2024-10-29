@@ -224,6 +224,81 @@ a {
 
 
 /*======================================================
+                          Burger Menu
+  ======================================================*/
+
+/* Initial Burger Menu Styling */
+.burger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: #939393FF;
+    border-radius: 2px;
+    transition: background-color 0.3s ease, margin-bottom 0.3s ease; /* Smooth color transition */
+}
+
+/* Change Burger Menu Color When Menu is Open */
+#menu.show ~ .burger-menu span {
+    background-color: #F79817; /* Orange color */
+    margin-bottom: 5px;
+}
+
+/* Burger Menu Styling */
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+.burger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: #939393FF;
+    border-radius: 2px;
+}
+
+
+/* Responsive Menu */
+@media (max-width: 768px) {
+    /* Show the burger menu */
+    .burger-menu {
+        display: flex;
+    }
+
+    /* Hide the main menu by default */
+    #menu {
+        visibility: hidden;
+        opacity: 0;
+        flex-direction: column;
+        background-color: #272727FF;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        gap: 10px;
+        padding: 10px 0;
+        transition: visibility 0.3s, opacity 0.3s ease;
+    }
+
+    /* Show menu when the show class is added */
+    #menu.show {
+        visibility: visible;
+        opacity: 1;
+        padding-bottom: 15px;
+    }
+
+    /* Navbar Links Styling for Mobile */
+    #menu li a {
+        padding: 10px;
+        font-size: 1.2em;
+    }
+}
+
+/*======================================================
                           Footer
   ======================================================*/
 
