@@ -298,6 +298,36 @@ a {
     }
 }
 
+/* Apply styles when <body> has the "mobile" class */
+body.mobile .burger-menu {
+    display: flex;
+}
+
+body.mobile #menu {
+    visibility: hidden;
+    opacity: 0;
+    flex-direction: column;
+    background-color: #272727FF;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    gap: 10px;
+    padding: 10px 0;
+    transition: visibility 0.3s, opacity 0.3s ease;
+}
+
+body.mobile #menu.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+body.mobile #menu li a {
+    padding: 10px;
+    font-size: 1.2em;
+}
+
 /*======================================================
                           Footer
   ======================================================*/
