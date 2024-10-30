@@ -24,7 +24,7 @@
         <ul id="menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="gallery.php" class="active">Gallery</a></li>
-            <li><a href="Portfolio.html">Portfolio</a></li>
+            <li><a href="portfolio.php">Portfolio</a></li>
             <li><a href="Contact.html">Contact</a></li>
         </ul>
 

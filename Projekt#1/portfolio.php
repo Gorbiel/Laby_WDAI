@@ -24,7 +24,7 @@
         <ul id="menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="gallery.php">Gallery</a></li>
-            <li><a href="Portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="portfolio.php" class="active">Portfolio</a></li>
             <li><a href="Contact.html">Contact</a></li>
         </ul>
 
@@ -52,7 +52,27 @@
         <img class="lightbox-image" id="lightbox-image" src="" alt="">
         <span class="arrow right-arrow">&#10095;</span> <!-- Right arrow -->
     </div>
-    <script src="js/portfolio.js"></script>
+    <?php
+    // Directory containing the gallery images
+    $directory = './resources/portfolio';
+
+    // Get all .jpg files in the directory
+    $imageFiles = glob($directory . '/*.jpg');
+
+    // Convert the PHP array to a JavaScript array
+    echo "<script>\n";
+    echo "const images = [\n";
+
+    // Loop through each file and add it to the JavaScript array
+    foreach ($imageFiles as $file) {
+        // Escape the file path for JavaScript and print it as an array element
+        echo "'" . addslashes($file) . "',\n";
+    }
+
+    echo "];\n";
+    echo "</script>";
+    ?>
+    <script src="js/gallery.js"></script>
 </main>
 <footer id="footer">
     © 2024 Copyright: Gabriel Kania | All rights reserved
