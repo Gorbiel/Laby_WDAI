@@ -25,7 +25,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="gallery.php" class="active">Gallery</a></li>
             <li><a href="portfolio.php">Portfolio</a></li>
-            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="contact.php">Contact</a></li>
         </ul>
 
         <!-- Burger Menu Icon -->

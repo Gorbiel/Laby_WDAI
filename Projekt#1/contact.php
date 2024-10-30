@@ -26,7 +26,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="gallery.php">Gallery</a></li>
             <li><a href="portfolio.php">Portfolio</a></li>
-            <li><a href="Contact.html" class="active">Contact</a></li>
+            <li><a href="contact.php" class="active">Contact</a></li>
         </ul>
 
         <!-- Burger Menu Icon -->
@@ -43,10 +43,11 @@
     <p>
         Do you want a print? Maybe you'd like to hire me or do a collab? Feel free to message me using this contact form
     </p>
-    <form id="contact-form" class="contact-form" action="#" method="POST">
+<!--    <form id="contact-form" class="contact-form" action="contact.php" method="POST">-->
+    <form id="contact-form" class="contact-form" action="contact.php" method="POST">
         <!-- Email Field -->
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required placeholder="john.smith@mail.com">
+        <input type="email" id="email" name="email" required placeholder="john.smith@example.com">
 
         <!-- Subject Dropdown -->
         <label for="subject">Subject:</label>
@@ -65,7 +66,35 @@
         <!-- Send Button -->
         <button type="submit" id="send-button">Send</button>
     </form>
-
+    <?php
+    // Check if form was submitted
+//    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//        // Sanitize and validate inputs
+//        $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+//        $subject = trim($_POST["subject"]);
+//        $message = trim($_POST["message"]);
+//
+//        // Validate required fields
+//        if (empty($email) || empty($subject) || empty($message)) {
+//            echo "<p style='color:red;'>All fields are required.</p>";
+//        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+//            echo "<p style='color:red;'>Invalid email format.</p>";
+//        } else {
+//            // Set email details
+//            $to = "mail.gorbiel+foto@gmail.com"; // Replace with your actual email address
+//            $subjectLine = "New Contact Form Submission: $subject";
+//            $body = "From: $email\n\nMessage:\n$message";
+//            $headers = "From: $email";
+//
+//            // Send the email
+//            if (mail($to, $subjectLine, $body, $headers)) {
+//                echo "<p style='color:green;'>Thank you! Your message has been sent successfully.</p>";
+//            } else {
+//                echo "<p style='color:red;'>Oops! Something went wrong, and we couldn't send your message.</p>";
+//            }
+//        }
+//    }
+    ?>
     <script src="js/contact.js"></script>
 
     <p>
