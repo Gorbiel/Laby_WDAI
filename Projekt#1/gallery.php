@@ -17,15 +17,15 @@
 <nav id="navbar">
     <div class="nav-wrapper">
         <div class="logo">
-            <a href="index.html"><img width="60px" height="auto" src="resources/logo.png" alt="logo"></a>
+            <a href="/"><img width="60px" height="auto" src="resources/logo.png" alt="logo"></a>
         </div>
 
         <!-- Navbar Links -->
         <ul id="menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="gallery.php" class="active">Gallery</a></li>
-            <li><a href="portfolio.php">Portfolio</a></li>
-            <li><a href="contact.php">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="gallery" class="active">Gallery</a></li>
+            <li><a href="portfolio">Portfolio</a></li>
+            <li><a href="contact">Contact</a></li>
         </ul>
 
         <!-- Burger Menu Icon -->
