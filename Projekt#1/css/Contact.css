@@ -99,3 +99,98 @@ main p {
     background: linear-gradient(135deg, #854ae4, #ef4172, #febc2f);
     color: white;
 }
+
+
+body.mobile {
+    main {
+        justify-content: center;
+    }
+
+    main h2 {
+        font-size: 5vh;
+        margin-bottom: 1vh;
+        text-align: center;
+    }
+
+    main p {
+        width: 90vw;
+        font-size: 3vh;
+        margin-bottom: 2vh;
+        text-align: justify;
+    }
+
+    main form label {
+        font-size: 2.5vh;
+    }
+
+    /* Contact Form Styling */
+
+    .contact-form {
+        max-width: 90vw;
+        min-width: 60vw;
+        gap: 2vh 2vw;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 0 auto 15px;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        width: 80vw;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 3vh;
+    }
+
+    .contact-form button {
+        padding: 1vh;
+        border-radius: 8px;
+        font-size: 3vh;
+    }
+
+    /* Social Icons Container */
+
+    .social-icons {
+        gap: 3vw; /* Space between icons */
+        margin-top: 0.5vh; /* Space above icons */
+    }
+
+    /* Font Awesome Icon Styling */
+
+    .fa {
+        vertical-align: center;
+        horiz-align: center;
+        padding: 1.3vw;
+        font-size: 7vh;
+        width: 16vw;
+        height: 16vw;
+        border-radius: 24px;
+    }
+
+    @media (orientation: landscape) {
+        main h2 {
+            font-size: 10vh;
+            margin-bottom: 1vh;
+        }
+
+        main p {
+            font-size: 5vh;
+            text-align: center;
+        }
+
+        .fa {
+            vertical-align: center;
+            horiz-align: center;
+            padding: 1.3vh;
+            font-size: 7vw;
+            width: 20vh;
+            height: 20vh;
+            border-radius: 24px;
+        }
+
+    }
+}
