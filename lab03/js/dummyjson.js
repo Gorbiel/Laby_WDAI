@@ -1,13 +1,23 @@
-// Function to fetch and display the first 30 products
-async function displayProducts() {
+// Function to fetch and display products based on a search query and sort order
+async function fetchAndDisplayProducts(query = '', sortOrder = 'none') {
     try {
-        const response = await fetch('https://dummyjson.com/products?limit=30');
+        const response = await fetch(`https://dummyjson.com/products/search?q=${query}`);
         const data = await response.json();
 
-        // Container for products
-        const productContainer = document.getElementById('product-container');
+        // Sort products based on the sort order
+        let products = data.products;
+        if (sortOrder === 'asc') {
+            products = products.sort((a, b) => a.title.localeCompare(b.title));
+        } else if (sortOrder === 'desc') {
+            products = products.sort((a, b) => b.title.localeCompare(a.title));
+        }
 
-        data.products.forEach(product => {
+        // Clear the current products
+        const productContainer = document.getElementById('product-container');
+        productContainer.innerHTML = '';
+
+        // Display the sorted products
+        products.forEach(product => {
             // Create the product card
             const productCard = document.createElement('div');
             productCard.classList.add('product-card');
@@ -40,5 +50,28 @@ async function displayProducts() {
     }
 }
 
-// Fetch and display products on page load
-displayProducts();
+// Function to handle search and sort inputs
+function handleInputs() {
+    const searchBox = document.getElementById('search-box');
+    const sortSelect = document.getElementById('sort-select');
+
+    // Event listener for the search box
+    searchBox.addEventListener('input', () => {
+        const query = searchBox.value;
+        const sortOrder = sortSelect.value;
+        fetchAndDisplayProducts(query, sortOrder);  // Update products based on query and sort
+    });
+
+    // Event listener for the sort dropdown
+    sortSelect.addEventListener('change', () => {
+        const query = searchBox.value;
+        const sortOrder = sortSelect.value;
+        fetchAndDisplayProducts(query, sortOrder);  // Update products based on query and sort
+    });
+}
+
+// Initialize the product display and input handlers on page load
+document.addEventListener('DOMContentLoaded', () => {
+    fetchAndDisplayProducts();  // Fetch and display all products initially
+    handleInputs();  // Set up input listeners for search and sort
+});

@@ -9,7 +9,15 @@
 <body>
 
 <!-- Top Navigation Bar -->
-<div id="top-bar">Product Showcase</div>
+<div id="top-bar">
+    <span>Product Showcase</span>
+    <input type="text" id="search-box" placeholder="Search products...">
+    <select id="sort-select">
+        <option value="none">Default</option>
+        <option value="asc">Name Ascending</option>
+        <option value="desc">Name Descending</option>
+    </select>
+</div>
 
 <!-- Product Container -->
 <div id="product-container"></div>
