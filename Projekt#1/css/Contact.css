@@ -182,6 +182,20 @@ body.mobile {
             text-align: center;
         }
 
+        main form label {
+            font-size: 1.5em;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            font-size: 1.5em;
+        }
+
+        .contact-form button {
+            font-size: 1.5em;
+        }
+
         .fa {
             vertical-align: center;
             horiz-align: center;

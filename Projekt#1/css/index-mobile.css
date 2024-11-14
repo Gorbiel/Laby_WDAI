@@ -49,6 +49,12 @@ body.mobile {
         .burger-menu span {
             width: 5vw;
         }
+
+        #footer {
+            font-size: 1.5em;
+            padding: 2.5vh 0;
+        }
+
     }
 
     /* Responsive Dropdown Menu */
