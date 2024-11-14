@@ -15,3 +15,13 @@ main section p {
     color: #939393FF;
     margin-bottom: 15px;
 }
+
+body.mobile {
+    h2 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}

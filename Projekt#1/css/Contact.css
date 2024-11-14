@@ -107,20 +107,20 @@ body.mobile {
     }
 
     main h2 {
-        font-size: 5vh;
+        font-size: 4em;
         margin-bottom: 1vh;
         text-align: center;
     }
 
     main p {
         width: 90vw;
-        font-size: 3vh;
+        font-size: 2em;
         margin-bottom: 2vh;
         text-align: justify;
     }
 
     main form label {
-        font-size: 2.5vh;
+        font-size: 3em;
     }
 
     /* Contact Form Styling */
@@ -143,13 +143,13 @@ body.mobile {
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 8px;
-        font-size: 3vh;
+        font-size: 3em;
     }
 
     .contact-form button {
         padding: 1vh;
         border-radius: 8px;
-        font-size: 3vh;
+        font-size: 3em;
     }
 
     /* Social Icons Container */

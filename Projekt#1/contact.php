@@ -43,7 +43,7 @@
     <p>
         Do you want a print? Maybe you'd like to hire me or do a collab? Feel free to message me using this contact form
     </p>
-    <form id="contact-form" class="contact-form" action="contact.php" method="POST">
+    <form id="contact-form" class="contact-form">
         <!-- Email Field -->
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required placeholder="john.smith@example.com">

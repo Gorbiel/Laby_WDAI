@@ -76,7 +76,7 @@ body.mobile {
     /* Navbar Links Styling for Mobile */
     #menu li a {
         padding: 10px 0; /* Increased padding for easier tapping */
-        font-size: 5vh; /* Larger font size for readability */
+        font-size: 7em; /* Larger font size for readability */
         margin-bottom: 1vh;
     }
 
@@ -134,7 +134,7 @@ body.mobile {
         color: #939393FF;
         text-align: center;
         padding: 2.5vh 0;
-        font-size: 2vh;
+        font-size: 2.5em;
         position: fixed;
         bottom: 0;
         width: 100%;
