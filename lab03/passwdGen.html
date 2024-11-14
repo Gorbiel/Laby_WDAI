@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="css/passwdGen.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Password generator</h2>
+    <label>
+        Min password lenght:
+        <input type="number" id="minLength" min="1" value="8">
+    </label>
+    <br><br>
+    <label>
+        Max password length:
+        <input type="number" id="maxLength" min="1" value="12">
+    </label>
+    <br><br>
+    <label>
+        <input type="checkbox" id="includeUppercase">
+        Capital letters
+    </label>
+    <br><br>
+    <label>
+        <input type="checkbox" id="includeSpecialChars">
+        Special characters
+    </label>
+    <br><br>
+    <label>
+        <input type="checkbox" id="avoidAmbiguous">
+        Avoid Ambiguous characters
+    </label>
+    <br><br>
+    <button onclick="generatePassword()">Generate</button>
+</div>
+<script src="js/passwdGen.js"></script>
+</body>
+</html>
