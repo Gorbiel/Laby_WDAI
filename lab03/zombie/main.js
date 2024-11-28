@@ -71,6 +71,9 @@ const decreaseHealth = () => {
 
 const updateScore = (delta) => {
     totalScore += delta;
+    if(totalScore < 0) {
+        totalScore = 0;
+    }
     $("#score").text(formatScore(totalScore, 5));
 }
 
